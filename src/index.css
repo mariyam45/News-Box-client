@@ -1,0 +1,10 @@
+.bg_text {
+  position: relative;
+}
+.bg_text .texts {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-10%, -50%);
+  line-height: 1.8rem;
+}
