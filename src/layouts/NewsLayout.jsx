@@ -1,24 +1,22 @@
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-// import { Outlet } from "react-router-dom";
 import { Col, Container, Row } from "react-bootstrap";
 import { Outlet } from "react-router-dom";
 import Footer from "../pages/Shared/Footer/Footer";
 import Header from "../pages/Shared/Header/Header";
-import LeftNav from "../pages/Shared/LeftNav/LeftNav";
 import RightNav from "../pages/Shared/RightNav/RightNav";
 
-const Main = () => {
+const NewsLayout = () => {
   return (
     <div>
       <Header></Header>
       {/* <Outlet></Outlet> */}
       <Container>
         <Row>
-          <Col lg={3}>
-            <LeftNav></LeftNav>
-          </Col>
-          <Col lg={6}>
+          {/* <Col lg={3}>
+              <LeftNav></LeftNav>
+            </Col> */}
+          <Col lg={9}>
             <Outlet />
           </Col>
           <Col lg={3}>
@@ -31,4 +29,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default NewsLayout;

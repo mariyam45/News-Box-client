@@ -8,3 +8,7 @@
   transform: translate(-10%, -50%);
   line-height: 1.8rem;
 }
+.author_img {
+  height: 45px;
+  width: 45px;
+}
