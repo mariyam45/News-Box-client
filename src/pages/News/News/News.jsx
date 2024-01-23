@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Card } from "react-bootstrap";
 import { FaArrowLeft } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
+import EditorsInsides from "../EditorsInside/EditorsInsides";
 
 const News = () => {
   const news = useLoaderData();
@@ -30,6 +31,8 @@ const News = () => {
           </Link>
         </Card.Body>
       </Card>
+
+      <EditorsInsides></EditorsInsides>
     </div>
   );
 };
