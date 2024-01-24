@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../layouts/MAin";
 import NewsLayout from "../layouts/NewsLayout";
 import Category from "../pages/Home/Caregory/Category";
-import Home from "../pages/Home/Home/Home";
 import News from "../pages/News/News/News";
 
 const router = createBrowserRouter([
@@ -12,7 +11,8 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <Category></Category>,
+        loader: () => fetch(`http://localhost:5000/news`),
       },
       {
         path: "/category/:id",

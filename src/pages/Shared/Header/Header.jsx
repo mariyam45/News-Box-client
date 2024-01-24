@@ -2,6 +2,7 @@ import moment from "moment";
 import React from "react";
 import { Button, Container, Nav, Navbar } from "react-bootstrap";
 import Marquee from "react-fast-marquee";
+import { Link } from "react-router-dom";
 import logo from "../../../assets/newsBoxlogo-01-01.png";
 
 const Header = () => {
@@ -29,7 +30,9 @@ const Header = () => {
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
               <Nav className="mx-auto">
-                <Nav.Link href="#home">Home</Nav.Link>
+                <Nav.Link href="#home">
+                  <Link to="/">Home</Link>
+                </Nav.Link>
                 <Nav.Link href="#about">About</Nav.Link>
                 <Nav.Link href="#career">Career</Nav.Link>
               </Nav>
