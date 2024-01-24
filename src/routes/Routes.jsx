@@ -9,26 +9,24 @@ import News from "../pages/News/News/News";
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: "/",
     element: <LoginLayouts />,
-    children=[
+    children: [
       {
-        path: '/',
-        element:<Navigate to='category/0'/>
-    },
+        path: "/",
+        element: <Navigate to="category/0" />,
+      },
       {
-      path: 'login',
-      element:<Login></Login>
-    },
-      {path: '/register',
-      element:<Register></Register>}
-    ]
-  }
+        path: "login",
+        element: <Login></Login>,
+      },
+      { path: "/register", element: <Register></Register> },
+    ],
+  },
   {
     path: "/category",
     element: <Main></Main>,
     children: [
-      
       {
         path: ":id",
         element: <Category></Category>,
