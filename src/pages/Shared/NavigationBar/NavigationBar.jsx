@@ -21,7 +21,7 @@ const NavigationBar = () => {
               {user ? (
                 <FaUserCircle className="user_icon" />
               ) : (
-                <Link to="login">
+                <Link to="/login">
                   <Button variant="secondary">Login</Button>
                 </Link>
               )}

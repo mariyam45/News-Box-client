@@ -1,4 +1,4 @@
-import { getAuth } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth } from "firebase/auth";
 import React, { createContext } from "react";
 import app from "../firebase/firebase.config";
 
@@ -8,7 +8,15 @@ const auth = getAuth(app);
 // eslint-disable-next-line react/prop-types
 const AuthPorvider = ({ children }) => {
   const user = null;
-  const authInfo = {};
+
+  const createUser = (email, password) => {
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+
+  const authInfo = {
+    user,
+    createUser,
+  };
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );
