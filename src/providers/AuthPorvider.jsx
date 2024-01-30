@@ -14,16 +14,20 @@ const auth = getAuth(app);
 // eslint-disable-next-line react/prop-types
 const AuthPorvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const createUser = (email, password) => {
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   const signIn = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
   };
 
   const logOut = () => {
+    setLoading(true);
     return signOut(auth);
   };
 
@@ -31,6 +35,7 @@ const AuthPorvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
       console.log("logged in usser inside auth state observer", loggedUser);
       setUser(loggedUser);
+      setLoading(false);
     });
     return () => {
       unsubscribe();
@@ -39,6 +44,7 @@ const AuthPorvider = ({ children }) => {
 
   const authInfo = {
     user,
+    loading,
     createUser,
     signIn,
     logOut,
