@@ -9,6 +9,8 @@ import News from "../pages/News/News/News";
 import Terms from "../pages/Shared/Terms/Terms";
 import PrivateRoutes from "./PrivateRoutes";
 
+const url = "/api";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -33,10 +35,7 @@ const router = createBrowserRouter([
       {
         path: ":id",
         element: <Category></Category>,
-        loader: ({ params }) =>
-          fetch(
-            `https://news-box-server-n236cwr3u-mariyam45.vercel.app/categories/${params.id}`
-          ),
+        loader: ({ params }) => fetch(`${url}/categories/${params.id}`),
       },
     ],
   },
@@ -51,10 +50,7 @@ const router = createBrowserRouter([
             <News></News>
           </PrivateRoutes>
         ),
-        loader: ({ params }) =>
-          fetch(
-            `https://news-box-server-n236cwr3u-mariyam45.vercel.app/news/${params.id}`
-          ),
+        loader: ({ params }) => fetch(`${url}/news/${params.id}`),
       },
     ],
   },

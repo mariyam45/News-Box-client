@@ -4,9 +4,10 @@ import LeftEdtInsight from "../LeftEdtInsight/LeftEdtInsight";
 
 const LeftNav = () => {
   const [categories, setCategories] = useState([]);
+  const url = "/api";
 
   useEffect(() => {
-    fetch("https://news-box-server-n236cwr3u-mariyam45.vercel.app/categories")
+    fetch(`${url}/categories`)
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((error) => console.error(error));
